@@ -1,8 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-
 const Navbar = () => {
     return (
-        <div className="bg-base-300">
+        <div className="bg-base-300 ">
             <div className="drawer max-w-7xl mx-auto px-8">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
@@ -13,7 +12,8 @@ const Navbar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
-                        <div className="flex-1 px-2 mx-2">Navbar Title</div>
+                        <Link to='/'><img src='https://i.ibb.co/G3JvLzd/navLogo.webp' alt="" /></Link>
+                        <Link to='/' className="flex-1 text-lg md:text-3xl mr-3 font-semibold ">StudyCircle<span className="text-primary">Assign</span></Link>
                         <div className="flex items-center gap-4">
                             <div className="menu menu-horizontal lg:flex gap-8 hidden">
                                 {/* Navbar menu content here */}
