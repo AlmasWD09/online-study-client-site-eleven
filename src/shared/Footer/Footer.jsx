@@ -2,14 +2,15 @@
 
 const Footer = () => {
     return (
-        <div className="bg-gray-200 dark:bg-gray-900 py-5">
+        <div className="bg-gray-200 dark:bg-gray-900 py-5 mt-10">
             <footer className="">
                 <div className="container p-6 mx-auto">
                     <div className="lg:flex">
                         <div className="w-full -mx-6 lg:w-2/5">
                             <div className="px-6">
-                                <a href="#">
-                                    <h1 className="flex-1 text-3xl font-semibold px-2 mx-2">StudyCircle<span className="text-primary">Assign</span></h1>
+                                <a href="#" className="flex items-center">
+                                    <img src='https://i.ibb.co/G3JvLzd/navLogo.webp' alt="" />
+                                    <h1 className="flex-1 text-3xl font-semibold ">StudyCircle<span className="text-primary">Assign</span></h1>
                                 </a>
 
                                 <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>

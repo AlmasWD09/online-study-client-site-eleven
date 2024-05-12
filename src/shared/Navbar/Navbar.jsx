@@ -1,5 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 const Navbar = () => {
+    const {user,logOut} = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogOut=()=>{
+        logOut()
+        navigate('/login')
+    }
     return (
         <div className="bg-base-300 ">
             <div className="drawer max-w-7xl mx-auto px-8">
@@ -67,8 +75,23 @@ const Navbar = () => {
                                 </NavLink>
                             </div>
                             <div className="flex items-center gap-3">
-                                <Link to='/login'><button className="font-semibold">Login</button></Link>
-                                <Link to='/register'><button className="border-2 border-primary px-1 rounded hover:bg-primary hover:text-white">Register</button></Link>
+                                <Link to='/register'><button className=" px-2 py-1 rounded hover:bg-primary hover:text-white">Register</button></Link>
+                                {
+                                    user?<div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                      <div className="w-10 rounded-full">
+                                        <img src={user?.photoURL} alt={user?.displayName} />
+                                      </div>
+                                    </div>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                      <li><a>{user?.displayName}</a></li>
+                                      <li onClick={handleLogOut}><a>Logout</a></li>
+                                    </ul>
+                                  </div>
+                                  :
+                                  <Link to='/login'><button className="px-2 py-1 rounded hover:bg-primary hover:text-white">Login</button></Link>
+                                }
+                                
                             </div>
                         </div>
                     </div>
