@@ -3,6 +3,8 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
+
 
 const CreateAssignments = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -27,9 +29,16 @@ const CreateAssignments = () => {
         console.log(assignmentInfo);
 
 
-        axios.post('http://localhost:5000/assignment/api/create',assignmentInfo)
+        // axios.post('http://localhost:5000/assignment/api/create',assignmentInfo)
+        axios.post(`${import.meta.env.VITE_API_URL}/assignment/api/create`,assignmentInfo)
         .then(data=>{
-            console.log(data.data);
+            if(data.data.insertedId){
+                Swal.fire({
+                    title: "Create Assignment Successfull!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                  });
+            }
         })
         
 

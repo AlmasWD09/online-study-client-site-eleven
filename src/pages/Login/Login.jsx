@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
@@ -6,11 +6,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 
+
 const Login = () => {
     const{logIn} = useAuth()
     const navigate = useNavigate();
     const location = useLocation()
     const [showPassword, setShowPassword] = useState(false);
+  
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,18 +22,18 @@ const Login = () => {
 
        
         // password validation
-        // const uppercasePassword = /[A-Z]/;
-        // const lowercasePassword = /[a-z]/;
-        // const minLength = 6;
-        // if(!uppercasePassword.test(password)){
-        //    return toast.error("'Password must at least one uppercase letter")
-        // }
-        // if(!lowercasePassword.test(password)){
-        //     return toast.error("'Password must at least one lowercase letter")
-        // }
-        // if(password.length < minLength){
-        //     return toast.error("'Password must at least 6 characters ")
-        // }
+        const uppercasePassword = /[A-Z]/;
+        const lowercasePassword = /[a-z]/;
+        const minLength = 6;
+        if(!uppercasePassword.test(password)){
+           return toast.error("'Password must at least one uppercase letter")
+        }
+        if(!lowercasePassword.test(password)){
+            return toast.error("'Password must at least one lowercase letter")
+        }
+        if(password.length < minLength){
+            return toast.error("'Password must at least 6 characters ")
+        }
         
         // LogIn user
         logIn(email, password)
@@ -45,7 +47,9 @@ const Login = () => {
                 console.log(error.message);
                 toast.error("password does not match");
             })
+         
     }
+
 
     return (
         <div className="flex justify-center items-center px-8 lg:px-24 mt-10">

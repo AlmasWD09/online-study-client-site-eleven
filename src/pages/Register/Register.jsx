@@ -21,18 +21,18 @@ const Register = () => {
 
 
           // password validation
-        //   const uppercasePassword = /[A-Z]/;
-        //   const lowercasePassword = /[a-z]/;
-        //   const minLength = 6;
-        //   if(!uppercasePassword.test(password)){
-        //      return toast.error("'Password must at least one uppercase letter")
-        //   }
-        //   if(!lowercasePassword.test(password)){
-        //       return toast.error("'Password must at least one lowercase letter")
-        //   }
-        //   if(password.length < minLength){
-        //       return toast.error("'Password must at least 6 characters ")
-        //   }
+          const uppercasePassword = /[A-Z]/;
+          const lowercasePassword = /[a-z]/;
+          const minLength = 6;
+          if(!uppercasePassword.test(password)){
+             return toast.error("'Password must at least one uppercase letter")
+          }
+          if(!lowercasePassword.test(password)){
+              return toast.error("'Password must at least one lowercase letter")
+          }
+          if(password.length < minLength){
+              return toast.error("'Password must at least 6 characters ")
+          }
 
         // Created User and updateUser
         creatUser(email, password)
@@ -49,6 +49,8 @@ const Register = () => {
             .catch(error => {
                 console.log(error.message);
             })
+
+
 
 
     }

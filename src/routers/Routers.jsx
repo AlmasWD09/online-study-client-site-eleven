@@ -7,6 +7,9 @@ import PendingAssignments from "../pages/PendingAssignments/PendingAssignments";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import PrivatRoute from "./PrivatRoute";
+import AssignmentDetails from "../pages/AssignmentDetails/AssignmentDetails";
+import MySubmitedAssignment from "../pages/MySubmitedAssignment/MySubmitedAssignment";
+import AssignmentSubmitForm from "../pages/AssignmentSubmitForm/AssignmentSubmitForm";
 
 
 const router = createBrowserRouter([
@@ -35,6 +38,20 @@ const router = createBrowserRouter([
           <PendingAssignments />
         </PrivatRoute>
         
+        },
+        {
+          path:'/assignment-details/:id',
+          element:<PrivatRoute>
+            <AssignmentDetails />
+          </PrivatRoute>,
+        },
+        {
+          path:'assignment-submit-form',
+          element:<AssignmentSubmitForm />,
+        },
+        {
+          path:'/my-submit-assignments',
+          element:<MySubmitedAssignment />,
         },
         {
           path:'/register',

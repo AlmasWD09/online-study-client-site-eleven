@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const AssignmentsCrud = ({ assignment }) => {
     const { _id, date, description, level, marks, photo, title } = assignment || {}
-console.log(typeof assignments);
     return (
-        <div className='max-w-7xl mx-auto px-8 mt-10'>
-            <div className="bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <img className="object-cover w-full h-56" src={photo} alt={title} />
-
-                    <div className="py-5 text-center">
-                    <p>{title}</p>
-                    <p>{marks}</p>
+        <div className=''>
+            <div className="w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 rounded-t-lg cursor-pointer">
+                <div className='relative'>
+                <img className="object-cover w-full h-56 rounded-t-lg" src={photo} alt={title} />
+                <p className='absolute -top-2 -right-2 bg-red-500 text-white h-10 w-10 rounded-full flex justify-center items-center'>{marks}</p>
+                </div>
+                <button className='bg-black px-2 rounded rounded-t-none text-white'>{level}</button>
+                    <div className="space-y-3 py-2">
+                    <p className='text-xl font-semibold'>{title}</p>
                     <button className='bg-secondary px-2 py-1 mr-2 rounded text-white'>Delete</button>
                     <button className='bg-secondary px-2 py-1 mr-2 rounded text-white'>Update</button>
-                    <button className='bg-secondary px-2 py-1 mr-2 rounded text-white'>View assignment</button>
+                    <Link to={`/assignment-details/${_id}`}><button className='bg-secondary px-2 py-1 mr-2 rounded text-white'>View assignment</button></Link>
                     </div>
             </div>
         </div>

@@ -17,12 +17,12 @@ getData()
 
     return (
         <div>
-            <div className="flex justify-center mt-10">
+            <div className="flex justify-center">
             <select name="" id="">
                 <option value="">Filter By Assignment</option>
             </select>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 max-w-5xl mx-auto px-8 lg:px-0 mt-10">
                 {
                     assignments.map(assignment=>{
                         return (
