@@ -1,6 +1,12 @@
+import { useEffect, useState } from "react";
 
 
 const Footer = () => {
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+    useEffect(() => {
+      setCurrentYear(new Date().getFullYear());
+    }, []);
     return (
         <div className="bg-gray-200 dark:bg-gray-900 py-5 mt-10">
             <footer className="">
@@ -26,7 +32,7 @@ const Footer = () => {
                                         </svg>
                                     </a>
 
-                                    <a href="#"
+                                    <a href="https://www.facebook.com"
                                         className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                                         aria-label="Facebook">
                                         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +42,7 @@ const Footer = () => {
                                         </svg>
                                     </a>
 
-                                    <a href="#"
+                                    <a href="https://github.com"
                                         className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                                         aria-label="Github">
                                         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,10 +58,11 @@ const Footer = () => {
                         <div className="mt-6 lg:mt-0 lg:flex-1">
                             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                                 <div>
-                                    <h3 className="text-gray-700 uppercase dark:text-white">About</h3>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                                    <h3 className="text-gray-700 uppercase dark:text-white">Links</h3>
+                                    <a href="/" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Home</a>
+                                    <a href="/assignments" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assignments</a>
+                                    <a href="/create-assignments" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Create Assignments</a>
+                                    <a href="/pending-assignments" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Pending Assignments</a>
                                 </div>
 
                                 <div>
@@ -67,15 +74,14 @@ const Footer = () => {
 
                                 <div>
                                     <h3 className="text-gray-700 uppercase dark:text-white">Products</h3>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega cloud</a>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion UI</a>
-                                    <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki UI</a>
+                                    <a href="#" className="block mt-2 text-sm text-gray-600 cursor-auto dark:text-gray-400 ">Mega cloud</a>
+                                    <a href="#" className="block mt-2 text-sm text-gray-600 cursor-auto dark:text-gray-400 ">Aperion UI</a>
                                 </div>
 
                                 <div>
                                     <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
+                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+01704995802</span>
+                                    <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">skalmas634@gmail.com</span>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +90,7 @@ const Footer = () => {
                     <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
 
                     <div>
-                        <p className="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+                        <p className="text-center text-gray-500 dark:text-gray-400">© Brand {currentYear} - All rights reserved</p>
                     </div>
                 </div>
             </footer>

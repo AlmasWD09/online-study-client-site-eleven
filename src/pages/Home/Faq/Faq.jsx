@@ -2,77 +2,58 @@
 
 const Faq = () => {
 
+
+
     return (
         <div>
             <section className="bg-white dark:bg-gray-900">
                 <div className="container max-w-4xl px-6 py-10 mx-auto">
                     <h1 className="text-2xl font-semibold text-center text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions</h1>
-
-                    <div className="mt-12 space-y-8">
-                        <div className="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                            <button className="flex items-center justify-between w-full p-8">
-                                <h1 className="font-semibold text-gray-700 dark:text-white">How i can play for my appoinment ?</h1>
-
-                                <span className="text-gray-400 bg-gray-200 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
-                                    </svg>
-                                </span>
-                            </button>
-
-                            <hr className="border-gray-200 dark:border-gray-700"/>
-
-                                <p className="p-8 text-sm text-gray-500 dark:text-gray-300">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
-                                </p>
+                    <div className="space-y-3 mt-10">
+                        <div className="collapse collapse-plus border rounded bg-gray-50">
+                            <input type="radio" name="my-accordion-3" defaultChecked />
+                            <div className="collapse-title text-xl font-medium">
+                            How do students join study circles?
+                            </div>
+                            <div className="collapse-content">
+                                <p>By creating or joining circles based on subjects, inviting peers to collaborate and share resources for efficient learning.</p>
+                            </div>
                         </div>
-
-                        <div className="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                            <button className="flex items-center justify-between w-full p-8">
-                                <h1 className="font-semibold text-gray-700 dark:text-white">Is the cost of the appoinment covered by private health insurance?</h1>
-
-                                <span className="text-white bg-blue-500 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                </span>
-                            </button>
+                        <div className="collapse collapse-plus border rounded bg-gray-50">
+                            <input type="radio" name="my-accordion-3" />
+                            <div className="collapse-title text-xl font-medium">
+                            What features does it offer?
+                            </div>
+                            <div className="collapse-content">
+                                <p>It enables assignment creation, distribution, and tracking within circles, promoting collaboration, feedback, and progress monitoring among members.</p>
+                            </div>
                         </div>
-
-                        <div className="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                            <button className="flex items-center justify-between w-full p-8">
-                                <h1 className="font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
-
-                                <span className="text-white bg-blue-500 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                </span>
-                            </button>
+                        <div className="collapse collapse-plus border rounded bg-gray-50">
+                            <input type="radio" name="my-accordion-3" />
+                            <div className="collapse-title text-xl font-medium">
+                            How does it encourage collaboration?
+                            </div>
+                            <div className="collapse-content">
+                                <p>Through discussion forums, chat rooms, and file sharing, students engage in collaborative activities, supporting each other in assignment completion</p>
+                            </div>
                         </div>
-
-                        <div className="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                            <button className="flex items-center justify-between w-full p-8">
-                                <h1 className="font-semibold text-gray-700 dark:text-white">What are your opening house?</h1>
-
-                                <span className="text-white bg-blue-500 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                </span>
-                            </button>
+                        <div className="collapse collapse-plus border rounded bg-gray-50">
+                            <input type="radio" name="my-accordion-3" />
+                            <div className="collapse-title text-xl font-medium">
+                            How does it ensure accountability?
+                            </div>
+                            <div className="collapse-content">
+                                <p>By monitoring task progress, providing visibility into contributions and deadlines, ensuring accountability and transparency among study circle members.</p>
+                            </div>
                         </div>
-
-                        <div className="border-2 border-gray-100 rounded-lg dark:border-gray-700">
-                            <button className="flex items-center justify-between w-full p-8">
-                                <h1 className="font-semibold text-gray-700 dark:text-white">What can i expect at my first consultation?</h1>
-
-                                <span className="text-white bg-blue-500 rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                </span>
-                            </button>
+                        <div className="collapse collapse-plus border rounded bg-gray-50">
+                            <input type="radio" name="my-accordion-3" />
+                            <div className="collapse-title text-xl font-medium">
+                            Can students receive feedback?
+                            </div>
+                            <div className="collapse-content">
+                                <p>Yes, students receive peer feedback, evaluate assignments, and reflect on their learning experiences, fostering continuous improvement within study circles.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

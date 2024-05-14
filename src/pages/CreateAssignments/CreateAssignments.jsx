@@ -22,14 +22,15 @@ const CreateAssignments = () => {
         const photo = form.photo.value
         const title = form.title.value
         const marks = form.marks.value
+        const userName = form.name.value
+        const userEmail = form.email.value
         const level = form.level.value
         const date = startDate.toLocaleDateString()
         const description = form.description.value
-        const assignmentInfo={photo,title,marks,level,date,description}
-        console.log(assignmentInfo);
+        const assignmentInfo={photo,title,marks,userName,userEmail,level,date,description}
 
 
-        // axios.post('http://localhost:5000/assignment/api/create',assignmentInfo)
+
         axios.post(`${import.meta.env.VITE_API_URL}/assignment/api/create`,assignmentInfo)
         .then(data=>{
             if(data.data.insertedId){
@@ -51,7 +52,7 @@ const CreateAssignments = () => {
                 <form onSubmit={handleAddAssignment} className="mt-5">
                     <div>
                         <label className="text-gray-700 dark:text-gray-200">Photo URL</label>
-                        <input id="photo" type="photoURL" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
+                        <input id="photo" name="photo" type="photoURL" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
                     </div>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
@@ -61,6 +62,14 @@ const CreateAssignments = () => {
                         <div>
                             <label className="text-gray-700 dark:text-gray-200">Marks</label>
                             <input id="" name="marks" type="number" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
+                        </div>
+                        <div>
+                            <label className="text-gray-700 dark:text-gray-200">User Name</label>
+                            <input id="" name="name" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
+                        </div>
+                        <div>
+                            <label className="text-gray-700 dark:text-gray-200">Email</label>
+                            <input id="" name="email" type="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
                         </div>
                         <div>
                             <label className="text-gray-700 dark:text-gray-200">Assignment Level</label>

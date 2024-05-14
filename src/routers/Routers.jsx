@@ -10,12 +10,14 @@ import PrivatRoute from "./PrivatRoute";
 import AssignmentDetails from "../pages/AssignmentDetails/AssignmentDetails";
 import MySubmitedAssignment from "../pages/MySubmitedAssignment/MySubmitedAssignment";
 import AssignmentSubmitForm from "../pages/AssignmentSubmitForm/AssignmentSubmitForm";
+import NotFound from "../pages/NotFound/NotFound";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainlLayout />,
+      errorElement:<NotFound />,
       children: [
         {
           path: '/',
@@ -51,7 +53,9 @@ const router = createBrowserRouter([
         },
         {
           path:'/my-submit-assignments',
-          element:<MySubmitedAssignment />,
+          element:<PrivatRoute>
+            <MySubmitedAssignment />
+          </PrivatRoute>,
         },
         {
           path:'/register',

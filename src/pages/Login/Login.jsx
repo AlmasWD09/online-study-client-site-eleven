@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
+
 
 
 
@@ -13,6 +14,8 @@ const Login = () => {
     const location = useLocation()
     const [showPassword, setShowPassword] = useState(false);
   
+
+ 
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -35,6 +38,7 @@ const Login = () => {
             return toast.error("'Password must at least 6 characters ")
         }
         
+       
         // LogIn user
         logIn(email, password)
             .then(res => {
@@ -49,6 +53,7 @@ const Login = () => {
             })
          
     }
+
 
 
     return (

@@ -9,12 +9,12 @@ const AssignmentDetails = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`${import.meta.env.VITE_API_URL}/assignment/api/get/${id}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/assignment/api/get/${id}`)
             setSingleData(data)
         }
         getData()
     }, [id])
-    const { _id, date, description, level, marks, photo, title } = singleData || {}
+    const { description, level, marks, photo, title } = singleData || {}
     return (
         <div className="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mt-10">
             <div className='relative'>

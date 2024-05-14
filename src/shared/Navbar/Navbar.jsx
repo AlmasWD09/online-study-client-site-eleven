@@ -20,7 +20,7 @@ const Navbar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
-                        <Link to='/'><img src='https://i.ibb.co/G3JvLzd/navLogo.webp' alt="" /></Link>
+                        <Link to='/'><img className="hidden md:block h-8" src='https://i.ibb.co/G3JvLzd/navLogo.webp' alt="" /></Link>
                         <Link to='/' className="flex-1 text-lg md:text-3xl mr-3 font-semibold ">StudyCircle<span className="text-primary">Assign</span></Link>
                         <div className="flex items-center gap-4">
                             <div className="menu menu-horizontal lg:flex gap-8 hidden">
@@ -99,16 +99,62 @@ const Navbar = () => {
                     {/* Page content here */}
                     {/* Content */}
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side z-50">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                     <div className="menu p-4 w-80 min-h-full bg-base-200">
                         {/* Sidebar content here */}
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
+                                <NavLink
+                                    to='/'
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "text-primary font-semibold"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }
+                                >Home
+                                    {/* other code */}
+                                </NavLink>
+                                <NavLink
+                                    to='/assignments'
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "text-primary font-semibold"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }
+                                >Assignments
+                                    {/* other code */}
+                                </NavLink>
+                                <NavLink
+                                    to='/create-assignments'
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "text-primary font-semibold"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }
+                                >Create Assignments
+                                    {/* other code */}
+                                </NavLink>
+                                <NavLink
+                                    to='/pending-assignments'
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "text-primary font-semibold"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }
+                                >Pending Assignments
+                                    {/* other code */}
+                                </NavLink>
+                            </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

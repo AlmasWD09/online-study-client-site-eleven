@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import {  updateProfile } from "firebase/auth";
 
 
+
 const Register = () => {
     const { creatUser,user,setUser } = useAuth();
     const [showPassword,setShowPassword] = useState(false);
@@ -54,6 +55,8 @@ const Register = () => {
 
 
     }
+
+   
     return (
         <div className=" flex justify-center items-center px-8 lg:px-24 my-10">
         <div className="w-full md:w-3/5 lg:w-1/3 mx-auto p-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg">
