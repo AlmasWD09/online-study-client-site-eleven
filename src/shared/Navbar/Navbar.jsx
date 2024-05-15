@@ -1,5 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Toggle from "../../components/Toggle/Toggle";
 const Navbar = () => {
     const {user,logOut} = useAuth()
     const navigate = useNavigate()
@@ -22,6 +23,7 @@ const Navbar = () => {
                         </div>
                         <Link to='/'><img className="hidden md:block h-8" src='https://i.ibb.co/G3JvLzd/navLogo.webp' alt="" /></Link>
                         <Link to='/' className="flex-1 text-lg md:text-3xl mr-3 font-semibold ">StudyCircle<span className="text-primary">Assign</span></Link>
+                            <Toggle />
                         <div className="flex items-center gap-4">
                             <div className="menu menu-horizontal lg:flex gap-8 hidden">
                                 {/* Navbar menu content here */}
