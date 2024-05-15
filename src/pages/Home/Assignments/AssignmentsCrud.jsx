@@ -16,7 +16,7 @@ const AssignmentsCrud = ({ assignment }) => {
                     <div className="space-y-3 py-2">
                     <p className='text-xl font-semibold'>{title || 'Not Fount'}</p>
                     <button className='bg-red-400 px-2 py-1 mr-2 rounded text-white'>Delete</button>
-                    <button className='bg-green-400 px-2 py-1 mr-2 rounded text-white'>Update</button>
+                    <Link to={`/assignment-update/${_id}`}><button className='bg-green-400 px-2 py-1 mr-2 rounded text-white'>Update</button></Link>
                     <Link to={`/assignment-details/${_id}`}><button className='bg-primary px-2 py-1 mr-2 rounded text-white'>View assignment</button></Link>
                     </div>
             </div>

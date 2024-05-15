@@ -11,6 +11,7 @@ import AssignmentDetails from "../pages/AssignmentDetails/AssignmentDetails";
 import MySubmitedAssignment from "../pages/MySubmitedAssignment/MySubmitedAssignment";
 import AssignmentSubmitForm from "../pages/AssignmentSubmitForm/AssignmentSubmitForm";
 import NotFound from "../pages/NotFound/NotFound";
+import AssignmentUpdate from "../pages/AssignmentUpdate/AssignmentUpdate";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             <CreateAssignments />
           </PrivatRoute>,
         
+        },
+        {
+          path:'/assignment-update/:id',
+          element:<AssignmentUpdate />,
+          loader:({params})=>fetch(` ${import.meta.env.VITE_API_URL}/assignment/api/get/${params.id}`)
         },
         {
           path:'/pending-assignments',

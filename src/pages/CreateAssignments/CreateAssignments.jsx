@@ -4,9 +4,11 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
 
 
 const CreateAssignments = () => {
+    const {user} = useAuth()
     const [selectedCategory, setSelectedCategory] = useState('');
     const [startDate, setStartDate] = useState(new Date());
 
@@ -65,11 +67,11 @@ const CreateAssignments = () => {
                         </div>
                         <div>
                             <label className="text-gray-700 dark:text-gray-200">User Name</label>
-                            <input id="" name="name" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
+                            <input disabled={user} id="" name="name" type="text" defaultValue={user?.displayName} className="disabled:cursor-not-allowed block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
                         </div>
                         <div>
                             <label className="text-gray-700 dark:text-gray-200">Email</label>
-                            <input id="" name="email" type="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
+                            <input disabled={user} id="" name="email" type="email" defaultValue={user?.email} className="disabled:cursor-not-allowed block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary focus:ring-opacity-40 dark:focus:border-primary focus:outline-none focus:ring" />
                         </div>
                         <div>
                             <label className="text-gray-700 dark:text-gray-200">Assignment Level</label>
