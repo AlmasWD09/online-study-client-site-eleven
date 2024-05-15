@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import { data } from "autoprefixer";
 
 
 const AssignmentDetails = () => {
+    const {user}=useAuth()
     const { id } = useParams()
     const [singleData, setSingleData] = useState(null)
 
@@ -14,7 +17,7 @@ const AssignmentDetails = () => {
         }
         getData()
     }, [id])
-    const { description, level, marks, photo, title } = singleData || {}
+    const { description, level, marks,date, photo, title } = singleData || {}
     return (
         <div className="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mt-10">
             <div className='relative'>
@@ -24,7 +27,6 @@ const AssignmentDetails = () => {
             </div>
             <div className="p-6">
                 <div>
-                    <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Product</span>
                     <p className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600">{title}</p>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
                 </div>
@@ -32,10 +34,10 @@ const AssignmentDetails = () => {
                 <div className="">
                     <div className="flex items-center">
                         <div className="flex items-center">
-                            <img className="object-cover h-10 rounded-full" src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
-                            <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabIndex="0" role="link">Jone Doe</a>
+                            <img className="object-cover h-10 rounded-full" src={user?.photoURL} alt="Avatar" />
+                            <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabIndex="0" role="link">{user?.displayName}</a>
                         </div>
-                        <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">21 SEP 2015</span>
+                        <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">{date}</span>
                     </div>
                     <Link to='/assignment-submit-form'>
                         <button className="bg-primary px-2 py-1 rounded text-white my-3">Take assignment</button>

@@ -7,10 +7,10 @@ import useAuth from "../../hooks/useAuth";
 const MySubmitedAssignment = () => {
     const { user } = useAuth();
     const [LoadData, setLoadData] = useState([])
-
+    const{title,status,marks,feedback} = LoadData || {}
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/assignment/api/get/user/${user?.email}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/submit-assignment/api/get`)
             setLoadData(data)
         }
         getData()
@@ -35,27 +35,24 @@ const MySubmitedAssignment = () => {
                           {
                             LoadData.map(item=><tr key={item._id}>
                                 <td>
-                                <div className="font-bold">Hart Hagerty</div>
+                                <div className="font-bold">{item.title}</div>
                                 </td>
 
                                 <td>
-                                    <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                    <span className="badge badge-ghost badge-sm">{item.status}</span>
                                 </td>
 
                                 <td>
-                                    Purple
+                                60
                                 </td>
 
                                 <td>
-                                  mark
+                                  {item.marks}
                                 </td>
 
                                 <td>
-                                    feedback
+                                    {item.feedback}
                                 </td>
-                                <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                                </th>
                             </tr>)
                           }
                         </tbody>
