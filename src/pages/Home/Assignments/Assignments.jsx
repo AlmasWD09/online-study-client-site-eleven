@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Assignments = () => {
     const [assignments, setAssignments] = useState([])
+    const [control,setControl] = useState(false)
     const [filterData, setFilterData] = useState('')
     const [itemPerPage, setItemPerPage] = useState(3)
     const [currentPage, setCurrentPage] = useState(1)
@@ -15,9 +16,10 @@ const Assignments = () => {
         const getData = async () => {
             const { data } = await axios(`${import.meta.env.VITE_API_URL}/assignment/api/get?page=${currentPage}&size=${itemPerPage}&filterData=${filterData}`)
             setAssignments(data)
+            setControl(true)
         }
         getData()
-    }, [currentPage, itemPerPage, filterData])
+    }, [currentPage, itemPerPage, filterData,control])
 
 
 
@@ -61,6 +63,8 @@ const Assignments = () => {
                         return (
                             <AssignmentsCrud key={(assignment._id)}
                                 assignment={assignment}
+                                control={control}
+                                setControl={setControl}
                             ></AssignmentsCrud>
                         )
                     })

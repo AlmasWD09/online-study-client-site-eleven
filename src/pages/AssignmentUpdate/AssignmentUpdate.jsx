@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 const AssignmentUpdate = () => {
     const {user} = useAuth()
+    const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState('');
     const [startDate, setStartDate] = useState(new Date());
 
@@ -39,6 +40,7 @@ const AssignmentUpdate = () => {
                     text: "You clicked the button!",
                     icon: "success"
                   });
+                  navigate('/assignments')
             }
         })
     }
