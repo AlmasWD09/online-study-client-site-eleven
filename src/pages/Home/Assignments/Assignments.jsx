@@ -6,10 +6,11 @@ import axios from "axios";
 const Assignments = () => {
     const [assignments, setAssignments] = useState([])
     const [filterData, setFilterData] = useState('')
-    const [itemPerPage, setItemPerPage] = useState(6)
+    const [itemPerPage, setItemPerPage] = useState(3)
     const [currentPage, setCurrentPage] = useState(1)
     const [count, setCount] = useState(0)
-console.log(filterData);
+
+
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios(`${import.meta.env.VITE_API_URL}/assignment/api/get?page=${currentPage}&size=${itemPerPage}&filterData=${filterData}`)
@@ -18,6 +19,9 @@ console.log(filterData);
         getData()
     }, [currentPage, itemPerPage, filterData])
 
+
+
+
     useEffect(() => {
         const getCount = async () => {
             const { data } = await axios(`${import.meta.env.VITE_API_URL}/assignment/api/get-count?filterData=${filterData}`)
@@ -25,6 +29,9 @@ console.log(filterData);
         }
         getCount()
     }, [filterData])
+
+
+
 
     const handlePagination = (value) => {
         setCurrentPage(value)
