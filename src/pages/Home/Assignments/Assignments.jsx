@@ -7,7 +7,7 @@ const Assignments = () => {
     const [assignments, setAssignments] = useState([])
     const [control,setControl] = useState(false)
     const [filterData, setFilterData] = useState('')
-    const [itemPerPage, setItemPerPage] = useState(3)
+    const [itemPerPage, setItemPerPage] = useState(5)
     const [currentPage, setCurrentPage] = useState(1)
     const [count, setCount] = useState(0)
 
